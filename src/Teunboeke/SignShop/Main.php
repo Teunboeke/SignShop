@@ -1,3 +1,13 @@
 <?php
 
-namespace Teunboeke\SignShop
+namespace Teunboeke\SignShop;
+  
+use pocketmine\event\block\BlockBreakEvent;
+use pocketmine\event\block\SignChangeEvent;
+use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\plugin\PluginBase;
+use pocketmine\event\Listener;
+use pocketmine\event\block\BlockPlaceEvent;
+use pocketmine\utils\Config;
+use pocketmine\item\Item;
+use pocketmine\item\ItemFactory; 
