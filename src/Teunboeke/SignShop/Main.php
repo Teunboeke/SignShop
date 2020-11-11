@@ -11,3 +11,9 @@ use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\utils\Config;
 use pocketmine\item\Item;
 use pocketmine\item\ItemFactory; 
+
+use onebone\economyapi\EconomyAPI;
+
+#define TAG 1
+
+class Main extends PluginBase implements Listener {
