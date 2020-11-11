@@ -56,3 +56,7 @@ class Main extends PluginBase implements Listener {
 							"tap-again" => "Are you sure to sell %1 (%MONETARY_UNIT%%2)? Tap again to confirm",
 							"no-item" => "§cYou have no item to sell",
 							"sold-item" => "§aYou have sold %1 of %2 for %MONETARY_UNIT%%3"
+						));
+			
+					$this->sellSign = new Config($this->getDataFolder()."SellSign.yml", Config::YAML, array(
+							"sell" => array(	
