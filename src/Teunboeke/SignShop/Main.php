@@ -72,3 +72,13 @@ class Main extends PluginBase implements Listener {
 					if($this->lang->exists($key)){
 						return str_replace(array("%MONETARY_UNIT%", "%1","%2", "%3"), array(EconomyAPI::getInstance()->getMonetaryUnit(), $val[0], $val[1], $val[2]),$this->lang->get($key));
 								}
+					return "There's no message named \"$key\"";
+				}
+	
+		public function onSignChange(SignChangeEvent $event){
+			$tag = $event->getLine(0);
+			if(($val = $this->checkTag($tag)) !== false){
+					$player = $event->getPlayer();
+					if(!$player->hasPermission ("economysell.sell.create")){
+						$player->sendMessage($this->getMessage("no-permission-create"));
+										return;
