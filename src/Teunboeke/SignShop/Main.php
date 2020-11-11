@@ -45,3 +45,8 @@ class Main extends PluginBase implements Listener {
 	
 		private function prepareLangPref(){
 			$this->lang = new Config($this->getDataFolder()."language.properties", Config::PROPERTIES, array(
+							"wrong-format" => "§aPlease write your sign with right format",
+							"item-not-support" => "§bItem %1 is not supported on EconomySell",
+							"no-permission-create" => "§cYou don't have permission to create sell center",
+							"sell-created" => "§aSell center has been created (%1 = %MONETARY_UNIT%%2)",
+							"removed-sell" => "§aSell center has been removed",
