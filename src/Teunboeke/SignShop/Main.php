@@ -25,3 +25,13 @@ class Main extends PluginBase implements Listener {
    * @var Config
    */
   	private $sellSign, $lang;
+
+		public function onEnable(){
+			@mkdir($this->getDataFolder());
+			
+			$this->saveDefaultConfig();
+			
+			$this->sell = (new Config($this->getDataFolder()."Sell.yml", Config::YAML))->getAll();
+			$this->getServer()->getPluginManager()->registerEvents($this, $this);
+			$this->prepareLangPref();
+			$this->placeQueue = [];
