@@ -86,4 +86,8 @@ class Main extends PluginBase implements Listener {
 							if(!is_numeric($event->getLine(1)) or !is_numeric($event->getLine(3))){
 								$player->sendMessage($this->getMessage("wrong-format"));
 								return;
-											}
+							}
+			$item = ItemFactory::fromString($event->getLine(2));
+							if($item === false){
+							$player->sendMessage($this->getMessage("item-not-support", array($event->getLine (2),"", "" )));
+							return;
