@@ -35,3 +35,9 @@ class Main extends PluginBase implements Listener {
 			$this->getServer()->getPluginManager()->registerEvents($this, $this);
 			$this->prepareLangPref();
 			$this->placeQueue = [];
+	}
+	
+		public function onDisable(){
+			$cfg = new Config($this->getDataFolder()."Sell.yml", Config::YAML);
+			$cfg->setAll($this->sell);
+			$cfg->save();
