@@ -41,3 +41,7 @@ class Main extends PluginBase implements Listener {
 			$cfg = new Config($this->getDataFolder()."Sell.yml", Config::YAML);
 			$cfg->setAll($this->sell);
 			$cfg->save();
+	}
+	
+		private function prepareLangPref(){
+			$this->lang = new Config($this->getDataFolder()."language.properties", Config::PROPERTIES, array(
