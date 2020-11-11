@@ -50,3 +50,9 @@ class Main extends PluginBase implements Listener {
 							"no-permission-create" => "§cYou don't have permission to create sell center",
 							"sell-created" => "§aSell center has been created (%1 = %MONETARY_UNIT%%2)",
 							"removed-sell" => "§aSell center has been removed",
+							"creative-mode" => "§cYou are in creative mode",
+							"no-permission-sell" => "§You don't have permission to sell item",
+							"no-permission-break" => "§cYou don't have permission to break sell center",
+							"tap-again" => "Are you sure to sell %1 (%MONETARY_UNIT%%2)? Tap again to confirm",
+							"no-item" => "§cYou have no item to sell",
+							"sold-item" => "§aYou have sold %1 of %2 for %MONETARY_UNIT%%3"
