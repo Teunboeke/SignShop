@@ -17,3 +17,5 @@ use onebone\economyapi\EconomyAPI;
 #define TAG 1
 
 class Main extends PluginBase implements Listener {
+  	private $sell;
+  	private $placeQueue;
