@@ -19,3 +19,9 @@ use onebone\economyapi\EconomyAPI;
 class Main extends PluginBase implements Listener {
   	private $sell;
   	private $placeQueue;
+  
+  /**
+	 *
+   * @var Config
+   */
+  	private $sellSign, $lang;
