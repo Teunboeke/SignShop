@@ -82,3 +82,8 @@ class Main extends PluginBase implements Listener {
 					if(!$player->hasPermission ("economysell.sell.create")){
 						$player->sendMessage($this->getMessage("no-permission-create"));
 										return;
+									}
+							if(!is_numeric($event->getLine(1)) or !is_numeric($event->getLine(3))){
+								$player->sendMessage($this->getMessage("wrong-format"));
+								return;
+											}
