@@ -104,3 +104,13 @@ class Main extends PluginBase implements Listener {
 													"itemName" => $item->getName(),
 													"meta" => (int) $item->getDamage(),
 													"amount" => (int) $event->getLine(3)
+											);
+
+							$player->sendMessage($this->getMessage("sell-created", [$item->getName(), (int)$event->getLine(3), ""]));
+				
+							$mu = EconomyAPI::getInstance()->getMonetaryUnit();
+							$event->setLine(0, $val[0]);
+							$event->setLine(1, str_replace(["%MONETARY_UNIT%", "%1"], [$mu, $event->getLine(1)], $val[1]));
+							$event->setLine(2, str_replace(["%MONETARY_UNIT%", "%2"], [$mu, $item->getName()], $val[2]));
+							$event->setLine(3, str_replace(["%MONETARY_UNIT%", "%3"], [$mu, $event->getLine(3)], $val[3]));
+				
