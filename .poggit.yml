@@ -1,0 +1,7 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Teunboeke/SignShop
+build-by-default: true
+branches:
+- main
+projects: 
+SignShop
+...
