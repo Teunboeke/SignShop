@@ -221,3 +221,8 @@ class Main extends PluginBase implements Listener {
 										}else if($getcount < $setitem->getCount()){
 											$sender->getInventory()->setItem($index, ItemFactory::get($getitem->getID(), 0, $setitem->getCount() - $getcount));
 																	break;
+																}
+										}
+					}
+	}
+}
