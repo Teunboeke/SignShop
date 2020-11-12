@@ -1,8 +1,8 @@
 name: SignShop
-main: Teunboeke\signshop\Main
-version: "1.0.0"
-api: [3.0.0, 3.0.0-ALPHA6, 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11]
 author: Teunboeke
+version: 1.0.0
+main: Teunboeke\signshop\Main
+api: [3.0.0, 3.0.0-ALPHA6, 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11]
 website: https://github.com/Teunboeke
 depend: [EconomyAPI]
 
