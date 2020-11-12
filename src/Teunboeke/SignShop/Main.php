@@ -194,3 +194,12 @@ class Main extends PluginBase implements Listener {
 						$event->setCancelled(true);
 						return;
 								}
+						$this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName()] = null;
+						unset($this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName()]);
+						$player->sendMessage($this->getMessage("removed-sell"));
+					}
+			}
+	public function checkTag($line1){
+		foreach($this->sellSign->getAll() as $tag => $val){
+						if($tag == $line1){							
+				return $val;
