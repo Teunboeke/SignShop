@@ -92,3 +92,15 @@ class Main extends PluginBase implements Listener {
 							$player->sendMessage($this->getMessage("item-not-support", array($event->getLine (2),"", "" )));
 							return;
 											}
+				
+							$block = $event->getBlock();
+							$this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$player->getLevel()->getName()] = array(
+													"x" => $block->getX(),
+													"y" => $block->getY(),
+													"z" => $block->getZ(),
+													"level" => $player->getLevel()->getName(),
+													"cost" => (int) $event->getLine(1),
+													"item" =>  (int) $item->getID(),
+													"itemName" => $item->getName(),
+													"meta" => (int) $item->getDamage(),
+													"amount" => (int) $event->getLine(3)
