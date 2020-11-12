@@ -185,3 +185,12 @@ class Main extends PluginBase implements Listener {
 			unset($this->placeQueue [$username]);
 					}
 		}
+	public function onBreak(BlockBreakEvent $event){
+		$block = $event->getBlock();
+		if(isset($this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName()])){
+				$player = $event->getPlayer();
+				if(!$player->hasPermission("economysell.sell.remove")){
+				$player->sendMessage($this->getMessage("no-permission-break"));
+						$event->setCancelled(true);
+						return;
+								}
