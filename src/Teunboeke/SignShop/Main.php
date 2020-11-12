@@ -140,3 +140,11 @@ class Main extends PluginBase implements Listener {
 						foreach($player->getInventory()->getContents() as $item){
 								if($item->getID() == $sell["item"] and $item->getDamage() == $sell["meta"]){
 														$cnt += $item->getCount();
+													}
+										}
+						
+			if(!isset($sell["itemName"])){
+						$item = $this->getItem($sell["item"], $sell["meta"], $sell["amount"]);
+						if($item === false){
+						$item = $sell["item"].":".$sell["meta"];
+											}else{
