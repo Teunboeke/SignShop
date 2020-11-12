@@ -203,3 +203,11 @@ class Main extends PluginBase implements Listener {
 		foreach($this->sellSign->getAll() as $tag => $val){
 						if($tag == $line1){							
 				return $val;
+								}
+					}
+				return false;
+			}
+
+	public function removeItem($sender, $getitem){
+			$getcount = $getitem->getCount();
+			if($getcount <= 0)
