@@ -21,7 +21,7 @@ class Main extends PluginBase implements Listener {
   	private $placeQueue;
   
   /**
-	 *
+   *
    * @var Config
    */
   	private $sellSign, $lang;
