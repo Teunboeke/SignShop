@@ -185,6 +185,7 @@ class Main extends PluginBase implements Listener {
 			unset($this->placeQueue [$username]);
 					}
 		}
+
 	public function onBreak(BlockBreakEvent $event){
 		$block = $event->getBlock();
 		if(isset($this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName()])){
@@ -199,6 +200,7 @@ class Main extends PluginBase implements Listener {
 						$player->sendMessage($this->getMessage("removed-sell"));
 					}
 			}
+
 	public function checkTag($line1){
 		foreach($this->sellSign->getAll() as $tag => $val){
 						if($tag == $line1){							
