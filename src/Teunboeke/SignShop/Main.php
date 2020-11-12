@@ -170,4 +170,13 @@ class Main extends PluginBase implements Listener {
 							$player->sendMessage($this->getMessage("sold-item", array($sell ["amount"], $sell ["item"].":".$sell ["meta"], $sell ["cost"] )));
 						}else{
 							$player->sendMessage($this->getMessage("no-item"));
-						
+										}
+						$event->setCancelled(true);
+						if($event->getItem()->canBePlaced()){
+							$this->placeQueue [$player->getName()] = true;
+										}
+					}
+				}
+	
+		public function onPlace(BlockPlaceEvent $event){
+			$username = $event->getPlayer()->getName();
