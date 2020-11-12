@@ -160,3 +160,8 @@ class Main extends PluginBase implements Listener {
 								$player->sendMessage($this->getMessage("tap-again", [$sell["itemName"], $sell["cost"], $sell["amount"]]));
 								return;
 										}else{
+								unset($this->tap[$player->getName()]);
+										}
+									}
+			
+						if($cnt >= $sell ["amount"]){
