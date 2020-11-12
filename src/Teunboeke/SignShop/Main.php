@@ -113,4 +113,9 @@ class Main extends PluginBase implements Listener {
 							$event->setLine(1, str_replace(["%MONETARY_UNIT%", "%1"], [$mu, $event->getLine(1)], $val[1]));
 							$event->setLine(2, str_replace(["%MONETARY_UNIT%", "%2"], [$mu, $item->getName()], $val[2]));
 							$event->setLine(3, str_replace(["%MONETARY_UNIT%", "%3"], [$mu, $event->getLine(3)], $val[3]));
-				
+						}
+					}
+	
+		public function onTouch(PlayerInteractEvent $event){
+				if($event->getAction() !== PlayerInteractEvent::RIGHT_CLICK_BLOCK){
+								return;
