@@ -135,3 +135,8 @@ class Main extends PluginBase implements Listener {
 									$player->sendMessage($this->getMessage("no-permission-sell"));
 									$event->setCancelled();
 									return;
+										}
+						$cnt = 0;
+						foreach($player->getInventory()->getContents() as $item){
+								if($item->getID() == $sell["item"] and $item->getDamage() == $sell["meta"]){
+														$cnt += $item->getCount();
