@@ -125,3 +125,8 @@ class Main extends PluginBase implements Listener {
 		if(isset($this->sell[$loc])){
 						$sell = $this->sell[$loc];
 						$player = $event->getPlayer();
+
+						if($player->getGamemode() % 2 === 1){
+	$player->sendMessage($this->getMessage("creative-mode"));
+											$event->setCancelled();
+											return;
