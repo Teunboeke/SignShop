@@ -217,12 +217,12 @@ class Main extends PluginBase implements Listener {
 		for($index = 0; $index < $sender->getInventory()->getSize(); $index ++){
 						$setitem = $sender->getInventory()->getItem($index);
 						if($getitem->getID() == $setitem->getID() and $getitem->getDamage() == $setitem->getDamage()){
-											if($getcount >= $setitem->getCount()){
-											$getcount -= $setitem->getCount();
-											$sender->getInventory()->setItem($index, ItemFactory::get(Item::AIR, 0, 1));
-										}else if($getcount < $setitem->getCount()){
-											$sender->getInventory()->setItem($index, ItemFactory::get($getitem->getID(), 0, $setitem->getCount() - $getcount));
-											break;
+						if($getcount >= $setitem->getCount()){
+						$getcount -= $setitem->getCount();
+						$sender->getInventory()->setItem($index, ItemFactory::get(Item::AIR, 0, 1));
+					}else if($getcount < $setitem->getCount()){
+						$sender->getInventory()->setItem($index, ItemFactory::get($getitem->getID(), 0, $setitem->getCount() - $getcount));
+						break;
 																}
 										}
 					}
