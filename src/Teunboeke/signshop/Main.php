@@ -63,8 +63,8 @@ class Main extends PluginBase implements Listener {
 									"§l§cSELL",
 									"§l§d%MONETARY_UNIT%%1",							
 									"§l§e%2",
-									"§b§lAmount : §l%3"
-												)
+									"§b§lAmount : §l%3"										)
+									)			
 								));
 			}
 	
@@ -222,7 +222,7 @@ class Main extends PluginBase implements Listener {
 											$sender->getInventory()->setItem($index, ItemFactory::get(Item::AIR, 0, 1));
 										}else if($getcount < $setitem->getCount()){
 											$sender->getInventory()->setItem($index, ItemFactory::get($getitem->getID(), 0, $setitem->getCount() - $getcount));
-																	break;
+											break;
 																}
 										}
 					}
