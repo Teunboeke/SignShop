@@ -165,3 +165,9 @@ class Main extends PluginBase implements Listener {
 									}
 			
 						if($cnt >= $sell ["amount"]){
+							$this->removeItem($player, ItemFactory::get($sell["item"], $sell["meta"], $sell["amount"]));
+							EconomyAPI::getInstance()->addMoney($player, $sell ["cost"], true, "EconomySell");
+							$player->sendMessage($this->getMessage("sold-item", array($sell ["amount"], $sell ["item"].":".$sell ["meta"], $sell ["cost"] )));
+						}else{
+							$player->sendMessage($this->getMessage("no-item"));
+						
