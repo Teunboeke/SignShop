@@ -130,3 +130,8 @@ class Main extends PluginBase implements Listener {
 	$player->sendMessage($this->getMessage("creative-mode"));
 											$event->setCancelled();
 											return;
+																}
+						if(!$player->hasPermission("economysell.sell.sell")){
+									$player->sendMessage($this->getMessage("no-permission-sell"));
+									$event->setCancelled();
+									return;
