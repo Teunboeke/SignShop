@@ -1,6 +1,6 @@
 <?php
 
-namespace Teunboeke\SignShop;
+namespace Teunboeke\signshop;
   
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\SignChangeEvent;
