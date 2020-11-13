@@ -189,15 +189,15 @@ class Main extends PluginBase implements Listener {
 	public function onBreak(BlockBreakEvent $event){
 		$block = $event->getBlock();
 		if(isset($this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName()])){
-				$player = $event->getPlayer();
-				if(!$player->hasPermission("economysell.sell.remove")){
+			$player = $event->getPlayer();
+			if(!$player->hasPermission("economysell.sell.remove")){
 				$player->sendMessage($this->getMessage("no-permission-break"));
-						$event->setCancelled(true);
-						return;
-								}
-						$this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName()] = null;
-						unset($this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName()]);
-						$player->sendMessage($this->getMessage("removed-sell"));
+				$event->setCancelled(true);
+				return;
+				}
+				$this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName()] = null;
+				unset($this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName()]);
+				$player->sendMessage($this->getMessage("removed-sell"));
 					}
 			}
 	public function checkTag($line1){
