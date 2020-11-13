@@ -63,7 +63,7 @@ class Main extends PluginBase implements Listener {
 									"§l§cSELL",
 									"§l§d%MONETARY_UNIT%%1",							
 									"§l§e%2",
-									"§b§lAmount : §l%3"										)
+									"§b§lAmount : §l%3"										
 							)			
 				));
 		}
