@@ -139,9 +139,9 @@ class EconomySell extends PluginBase implements Listener {
 						$cnt = 0;
 						foreach($player->getInventory()->getContents() as $item){
 								if($item->getID() == $sell["item"] and $item->getDamage() == $sell["meta"]){
-														$cnt += $item->getCount();
-													}
-										}
+									$cnt += $item->getCount();
+								}
+					}
 						
 					if(!isset($sell["itemName"])){
 						$item = $this->getItem($sell["item"], $sell["meta"], $sell["amount"]);
