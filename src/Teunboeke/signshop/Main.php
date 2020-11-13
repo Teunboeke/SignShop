@@ -180,7 +180,7 @@ class Main extends PluginBase implements Listener {
 	
 		public function onPlace(BlockPlaceEvent $event){
 			$username = $event->getPlayer()->getName();
-			if(isset($this->placeQueue [$username]))
+			if(isset($this->placeQueue [$username])){
 			$event->setCancelled(true);
 			unset($this->placeQueue [$username]);
 					}
