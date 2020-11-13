@@ -24,10 +24,10 @@ class EconomySell extends PluginBase implements Listener {
    *
    * @var Config
    */
-  	private $sellSign, $lang;
+  private $sellSign, $lang;
 
-		public function onEnable(){
-			@mkdir($this->getDataFolder());
+  public function onEnable(){
+  @mkdir($this->getDataFolder());
 			
 			$this->saveDefaultConfig();
 			
