@@ -64,13 +64,13 @@ class Main extends PluginBase implements Listener {
 									"§l§d%MONETARY_UNIT%%1",							
 									"§l§e%2",
 									"§b§lAmount : §l%3"										)
-									)			
-								));
+								)			
+						));
 			}
 	
 		public function getMessage($key, $val = array("%1", "%2", "%3")){
-					if($this->lang->exists($key)){
-						return str_replace(array("%MONETARY_UNIT%", "%1","%2", "%3"), array(EconomyAPI::getInstance()->getMonetaryUnit(), $val[0], $val[1], $val[2]),$this->lang->get($key));
+			if($this->lang->exists($key)){
+			return str_replace(array("%MONETARY_UNIT%", "%1","%2", "%3"), array(EconomyAPI::getInstance()->getMonetaryUnit(), $val[0], $val[1], $val[2]),$this->lang->get($key));
 								}
 					return "There's no message named \"$key\"";
 				}
@@ -118,13 +118,13 @@ class Main extends PluginBase implements Listener {
 	
 		public function onTouch(PlayerInteractEvent $event){
 				if($event->getAction() !== PlayerInteractEvent::RIGHT_CLICK_BLOCK){
-								return;
-							}
+					return;
+		}
 		$block = $event->getBlock();
 		$loc = $block->getX().":".$block->getY().":".$block->getZ().":".$block->getLevel()->getName();
 		if(isset($this->sell[$loc])){
-						$sell = $this->sell[$loc];
-						$player = $event->getPlayer();
+			$sell = $this->sell[$loc];
+				$player = $event->getPlayer();
 
 						if($player->getGamemode() % 2 === 1){
 	$player->sendMessage($this->getMessage("creative-mode"));
@@ -215,9 +215,9 @@ class Main extends PluginBase implements Listener {
 			if($getcount <= 0)
 			return;
 		for($index = 0; $index < $sender->getInventory()->getSize(); $index ++){
-						$setitem = $sender->getInventory()->getItem($index);
-						if($getitem->getID() == $setitem->getID() and $getitem->getDamage() == $setitem->getDamage()){
-						if($getcount >= $setitem->getCount()){
+				$setitem = $sender->getInventory()->getItem($index);
+				if($getitem->getID() == $setitem->getID() and $getitem->getDamage() == $setitem->getDamage()){
+					if($getcount >= $setitem->getCount()){
 						$getcount -= $setitem->getCount();
 						$sender->getInventory()->setItem($index, ItemFactory::get(Item::AIR, 0, 1));
 					}else if($getcount < $setitem->getCount()){
