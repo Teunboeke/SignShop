@@ -156,13 +156,13 @@ class EconomySell extends PluginBase implements Listener {
 						$now = microtime(true);
 						if($this->getConfig()->get("enable-double-tap")){
 					if(!isset($this->tap[$player->getName()]) or $now - $this->tap[$player->getName()][1] >= 1.5  or $this->tap[$player->getName()][0] !== $loc){
-								$this->tap[$player->getName()] = [$loc, $now];
-								$player->sendMessage($this->getMessage("tap-again", [$sell["itemName"], $sell["cost"], $sell["amount"]]));
-								return;
-							}else{
-								unset($this->tap[$player->getName()]);
-										}
-									}
+							$this->tap[$player->getName()] = [$loc, $now];
+							$player->sendMessage($this->getMessage("tap-again", [$sell["itemName"], $sell["cost"], $sell["amount"]]));
+							return;
+						}else{
+							unset($this->tap[$player->getName()]);
+							}
+						}
 			
 						if($cnt >= $sell ["amount"]){
 							$this->removeItem($player, ItemFactory::get($sell["item"], $sell["meta"], $sell["amount"]));
