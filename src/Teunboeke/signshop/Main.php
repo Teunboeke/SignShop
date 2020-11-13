@@ -143,7 +143,7 @@ class Main extends PluginBase implements Listener {
 													}
 										}
 						
-			if(!isset($sell["itemName"])){
+					if(!isset($sell["itemName"])){
 						$item = $this->getItem($sell["item"], $sell["meta"], $sell["amount"]);
 						if($item === false){
 						$item = $sell["item"].":".$sell["meta"];
@@ -152,14 +152,14 @@ class Main extends PluginBase implements Listener {
 											}
 								$this->sell[$loc]["itemName"] = $item;
 								$sell["itemName"] = $item;
-										}
+							}
 						$now = microtime(true);
 						if($this->getConfig()->get("enable-double-tap")){
 					if(!isset($this->tap[$player->getName()]) or $now - $this->tap[$player->getName()][1] >= 1.5  or $this->tap[$player->getName()][0] !== $loc){
 								$this->tap[$player->getName()] = [$loc, $now];
 								$player->sendMessage($this->getMessage("tap-again", [$sell["itemName"], $sell["cost"], $sell["amount"]]));
 								return;
-										}else{
+							}else{
 								unset($this->tap[$player->getName()]);
 										}
 									}
