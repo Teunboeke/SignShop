@@ -200,15 +200,14 @@ class Main extends PluginBase implements Listener {
 						$player->sendMessage($this->getMessage("removed-sell"));
 					}
 			}
-
 	public function checkTag($line1){
 		foreach($this->sellSign->getAll() as $tag => $val){
 						if($tag == $line1){							
 				return $val;
-								}
 					}
-				return false;
 			}
+			return false;
+		}
 
 	public function removeItem($sender, $getitem){
 			$getcount = $getitem->getCount();
