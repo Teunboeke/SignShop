@@ -64,9 +64,9 @@ class Main extends PluginBase implements Listener {
 									"§l§d%MONETARY_UNIT%%1",							
 									"§l§e%2",
 									"§b§lAmount : §l%3"										)
-								)			
-						));
-			}
+							)			
+				));
+		}
 	
 		public function getMessage($key, $val = array("%1", "%2", "%3")){
 			if($this->lang->exists($key)){
