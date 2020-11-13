@@ -81,11 +81,11 @@ class EconomySell extends PluginBase implements Listener {
 					$player = $event->getPlayer();
 					if(!$player->hasPermission ("economysell.sell.create")){
 						$player->sendMessage($this->getMessage("no-permission-create"));
-										return;
-									}
-							if(!is_numeric($event->getLine(1)) or !is_numeric($event->getLine(3))){
-								$player->sendMessage($this->getMessage("wrong-format"));
-								return;
+							return;
+						}
+						if(!is_numeric($event->getLine(1)) or !is_numeric($event->getLine(3))){
+						$player->sendMessage($this->getMessage("wrong-format"));
+							return;
 						}
 						$item = ItemFactory::fromString($event->getLine(2));
 						if($item === false){
