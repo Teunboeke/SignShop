@@ -91,7 +91,7 @@ class EconomySell extends PluginBase implements Listener {
 						if($item === false){
 							$player->sendMessage($this->getMessage("item-not-support", array($event->getLine (2),"", "" )));
 							return;
-											}
+						}
 				
 							$block = $event->getBlock();
 							$this->sell[$block->getX().":".$block->getY().":".$block->getZ().":".$player->getLevel()->getName()] = array(
