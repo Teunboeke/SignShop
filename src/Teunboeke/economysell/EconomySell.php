@@ -88,7 +88,7 @@ class EconomySell extends PluginBase implements Listener {
 							return;
 						}
 						$item = ItemFactory::fromString($event->getLine(2));
-						if($item === false){
+						If(!$item instanceof Item){
 							$player->sendMessage($this->getMessage("item-not-support", array($event->getLine (2),"", "" )));
 							return;
 						}
